@@ -24,7 +24,7 @@ WORKDIR /sgl-workspace
 
 ARG CUDA_VERSION
 RUN python3 -m pip install --upgrade pip setuptools wheel html5lib six \
-    && git clone --depth=1 https://github.com/sgl-project/sglang.git \
+    && git clone -b v0.4.6.post5-fix --depth=1 https://github.com/sebin-maret/sglang.git \
     && if [ "$CUDA_VERSION" = "12.1.1" ]; then \
          export CUINDEX=121; \
        elif [ "$CUDA_VERSION" = "12.4.1" ]; then \
